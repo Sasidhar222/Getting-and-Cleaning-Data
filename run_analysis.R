@@ -34,7 +34,7 @@ complete_DF <- rbind(Train,Test) %>% merge(Activity_lables,by = 'ActivityNo.') %
 
 newDF <- complete_DF %>% group_by(Subject, ActivityLabels) %>% summarize_all(mean)
 
-if ( file.exists("means.cs") ) {
+if ( file.exists("means.csv") ) {
   file.remove("means.csv")
   file.remove("maens.txt")
 }
